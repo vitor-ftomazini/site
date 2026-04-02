@@ -1,0 +1,139 @@
+<!DOCTYPE html> 
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vitor Ferrari Tomazini - Psicólogo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { box-sizing: border-box; }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gradient-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 30% 80%, rgba(255, 183, 197, 0.25), transparent 50%),
+                radial-gradient(circle at 70% 20%, rgba(168, 237, 234, 0.25), transparent 50%);
+            animation: float 8s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%,100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 font-sans">
+
+<!-- NAVBAR -->
+<nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <span class="text-2xl font-bold text-gray-800">Vitor Ferrari Tomazini</span>
+
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600">Início</a>
+                <a href="terapia-online.html" class="text-gray-700 hover:text-blue-600">Terapia Online</a>
+                <a href="ansiedade.html" class="text-gray-700 hover:text-blue-600">Ansiedade</a>
+                <a href="insonia.html" class="text-gray-700 hover:text-blue-600">Insônia</a>
+                <a href="#contato" class="text-gray-700 hover:text-blue-600">Contato</a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden text-gray-700 text-2xl">
+                ☰
+            </button>
+        </div>
+    </div>
+
+    <div id="menu" class="hidden md:hidden bg-white border-t">
+        <a href="index.html" class="block px-4 py-2">Início</a>
+        <a href="terapia-online.html" class="block px-4 py-2">Terapia Online</a>
+        <a href="ansiedade.html" class="block px-4 py-2">Ansiedade</a>
+        <a href="insonia.html" class="block px-4 py-2">Insônia</a>
+        <a href="#contato" class="block px-4 py-2">Contato</a>
+    </div>
+</nav>
+
+<section class="gradient-bg min-h-screen flex items-center pt-16">
+    <div class="max-w-6xl mx-auto px-4 py-20 text-center fade-in">
+
+        <h1 class="text-5xl font-bold mb-6">
+            Vitor Ferrari Tomazini
+        </h1>
+
+        <p class="text-xl mb-6">
+            Psicologia Baseada em Evidências
+        </p>
+
+        <p class="mb-10">
+            Atendimentos presenciais em Londrina e online para todo Brasil
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <a href="terapia-online.html" class="bg-white p-6 rounded shadow card-hover">
+                <h2 class="text-xl font-semibold">Terapia Online</h2>
+            </a>
+
+            <a href="ansiedade.html" class="bg-white p-6 rounded shadow card-hover">
+                <h2 class="text-xl font-semibold">Ansiedade</h2>
+            </a>
+
+            <a href="insonia.html" class="bg-white p-6 rounded shadow card-hover">
+                <h2 class="text-xl font-semibold">Insônia</h2>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="contato" class="py-16 bg-white text-center">
+    <h2 class="text-3xl font-bold mb-6">Contato</h2>
+    <p class="mb-4">Agende sua sessão:</p>
+
+    <a href="https://wa.me/5514991087339?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20terapia." 
+       class="bg-green-500 text-white px-6 py-3 rounded">
+        Converse comigo
+    </a>
+</section>
+
+<footer class="bg-black text-white py-6 text-center">
+    <p>&copy; 2026 Vitor Ferrari Tomazini</p>
+</footer>
+
+<script>
+    const btn = document.getElementById("menu-btn");
+    const menu = document.getElementById("menu");
+
+    btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+    });
+</script>
+
+</body>
+</html>
